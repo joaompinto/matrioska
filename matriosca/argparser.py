@@ -21,6 +21,14 @@ def arg_parser():
         help="generate a random encryption key",
     )
     parser.add_option(
+        "-o",
+        "--output-file",
+        action="store",
+        dest="output_filename",
+        default=None,
+        help="write to output file instead of stdout",
+    )
+    parser.add_option(
         "-k",
         "--key-env",
         action="store",
