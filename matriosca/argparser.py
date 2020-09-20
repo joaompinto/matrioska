@@ -13,6 +13,14 @@ def arg_parser():
         help="decrypt file",
     )
     parser.add_option(
+        "-g",
+        "--gen-key",
+        action="store_true",
+        dest="gen_key",
+        default=None,
+        help="generate a random encryption key",
+    )
+    parser.add_option(
         "-k",
         "--key-env",
         action="store",

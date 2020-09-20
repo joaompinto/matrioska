@@ -21,6 +21,13 @@ def check_key_value(key_env):
     return bin_key_value
 
 
+def generate_random_key(b64_encoded=False):
+    key = get_random_bytes(32)  # AES256
+    if b64_encoded:
+        return b64encode(key).decode()
+    return key
+
+
 def encrypt(
     input_filename: str, output_filename: str, force: bool, encryption_key=None
 ):
@@ -33,7 +40,7 @@ def encrypt(
     if encryption_key:
         key = encryption_key
     else:
-        key = get_random_bytes(32)  # AES256
+        key = generate_random_key()
     plain_key = b64encode(key).decode()
 
     cipher = AES.new(key, AES.MODE_EAX)
