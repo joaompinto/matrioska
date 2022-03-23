@@ -3,4 +3,4 @@
 requires = ["setuptools>=42", "wheel", "setuptools_scm[toml]>=3.4"]
 
 [tool.setuptools_scm]
-write_to = "matriosca/version.py"
+write_to = "matrioska/version.py"

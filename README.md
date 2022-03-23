@@ -1,6 +1,6 @@
-# Matriosca
+# matrioska
 
-Command line tool and Python library for data encryption
+Command line tool and Python library for data symmetric encryption
 
 # Features
 - Generate a random (base64 encoded) 32 bytes passphrase (for AES256)
@@ -12,23 +12,23 @@ The encryption is performed using [AES-256](Advanced_Encryption_Standard) in [EA
 
 # Install
 ```sh
-pip install git+https://github.com/joaompinto/matriosca
+pip install matrioska
 ```
 
 # Usage
 ```sh
 # Generate a random encryption key and story in an environment variable
-KEY=$(matriosca --gen-key)
+export KEY=$(matrioska --gen-key)
 
 # Encrypt stdin
-echo "This is a very secret sentence" | matriosca -k KEY > /tmp/secret
+echo "This is a very secret sentence" | matrioska -k KEY > /tmp/secret
 
 # Decrypt stdin
-cat /tmp/secret | matriosca -k KEY -d
+cat /tmp/secret | matrioska -k KEY -d
 
 # Encrypt file omitting both source and destioname filenames from command line
-matriosca -k KEY < /etc/passwd > /tmp/secret_file
+matrioska -k KEY < /etc/passwd > /tmp/secret_file
 
 # Decrypt file omitting both source and destioname filenames from command line
-matriosca -k KEY -d < /tmp/secret_file > /tmp/secret
+matrioska -k KEY -d < /tmp/secret_file > /tmp/secret
 ```
